@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+/*main*/
+#main{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: x mandatory;
+    background-color: rgb(41, 49, 61);
+    position: relative;
+}
+#main::before{
+    content: '';
+    position: absolute;
+    top: 44vw;
+    left: 0;
+    height: 2vw;
+    width: 200vw;
+    z-index: 2;
+    background: repeating-linear-gradient(45deg , #222222, #222222 10px, rgb(41, 49, 61) 10px, rgb(41, 49, 61) 20px);
+}
+
+/*sections*/
+.section{
+    min-width: 100vw;
+    height: 140vw;
+    margin-top: 44vw;
+    padding-top: 16vw;
+    scroll-snap-align: start;
+    position: relative;
+    background-color: #222222;
+    text-align: center;
+}
+.section::after{
+    content: ' ';
+    width: 70vw;
+    height: 2vw;
+    position: absolute;
+    top: -12vw;
+    left: 15vw;
+    border-radius: 38px;
+    background: -webkit-linear-gradient(to right, #bc4e9c, #f80759);
+    background: linear-gradient(to right, #bc4e9c, #f80759);
+    -webkit-box-shadow: 2px 2px 20px #f80759;
+    box-shadow: 2px 2px 20px #f80759;
+}
+.section h2{
+    width: 70vw;
+    height: 2vw;
+    position: absolute;
+    top: -25vw;
+    left: 15vw;
+    color: #ff1764;
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 16px #f80759;
+
+}
+
+
+/*forms input*/
+form{
+    color: #30dd30;
+}
+#label{
+    color: #30dd30;
+    position: absolute;
+    left: 50vw;
+    top: 18vw;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    transition: all 0.2s;;
+}
+form input, form select{
+    background-color: transparent;
+    color: #30dd30;
+    padding: 2vw;
+    margin-top: 2.5vw;
+    letter-spacing: 0.1rem;
+    outline: none;
+    border: none;
+}
+form input[type="number"]{
+    text-align:center;
+    width: 55vw;
+}
+
+/*loader*/
+#loader{
+    position: absolute;
+    top: 70vw;
+    left: 31%;
+    color: #efefef;
+    text-align: center;
+    transform: scale(0);
+    transition: all 0.2s;
+    transform: scale(0);
+}
+
+/*answer*/
+.answer{
+    color: #30dd30;
+    margin-top: 10vw;
+}

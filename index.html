@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Crypto evaluator</title>
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="theme-color" content="#29313D">
+    </head>
+    <body>
+    <div id="main">
+        <div id="line"></div>
+        <div id="priceAt" class="section">
+            <h2>Fetch price</h2>
+            <form>
+                Fetch
+                <select id="fpriceCoin">
+                    <option value="BTC">BITCOIN</option>
+                    <option value="ETH">Ethereum</option>
+                    <option value="LTC">Litecoin</option>
+                </select><br>
+                In
+                <select id="fpriceMoney">
+                    <option value="USD">US Dollars</option>
+                    <option value="GBP">GB Pounds</option>
+                    <option value="EUR">EU Euros</option>
+                </select><br>
+                <input type="submit" id="fprice" value="Fetch Price">
+            </form>
+            <div class="answer" id="fpans"></div>
+        </div>
+        <div id="convertAmount" class="section">
+            <h2>Converter</h2>
+            <form>
+                <label for="amount" id="label">Amount</label>
+                <input id="amount" type="number"><br>
+                <select id="cpriceCoin">
+                    <option value="BTC">BITCOIN</option>
+                    <option value="ETH">Ethereum</option>
+                    <option value="LTC">Litecoin</option>
+                </select><br>
+                <select id="cpriceMoney">
+                    <option value="USD">US Dollars</option>
+                    <option value="GBP">GB Pounds</option>
+                    <option value="EUR">EU Euros</option>
+                </select><br>
+                <input type="submit" id="convert" value="Convert">
+            </form>
+            <div class="answer" id="cpans"></div>
+        </div>
+    </div>
+
+        <!--loader-->
+        <div id="loader">Fetching details<br>Please wait!</div>
+    </body>
+    <script>
+            //registering service worker
+            if ('serviceWorker' in navigator) {
+            console.log("Will the service worker register?");
+            navigator.serviceWorker.register('service-worker.js')
+              .then(function(reg){
+                console.log("Yes, it did.");
+              }).catch(function(err) {
+                console.log("No it didn't. This happened: ", err)
+              });
+            }
+    </script>
+    <script src="script.js"></script>
+</html>
