@@ -1,2 +1,3 @@
 # CryptoTracker
-A small pwa which can fetch price details.
+A small mobile(no desktop support) website which can fetch price details.
+and convert price of a cryptocurrency in a currency.
