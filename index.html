@@ -52,17 +52,5 @@
         <!--loader-->
         <div id="loader">Fetching details<br>Please wait!</div>
     </body>
-    <script>
-            //registering service worker
-            if ('serviceWorker' in navigator) {
-            console.log("Will the service worker register?");
-            navigator.serviceWorker.register('service-worker.js')
-              .then(function(reg){
-                console.log("Yes, it did.");
-              }).catch(function(err) {
-                console.log("No it didn't. This happened: ", err)
-              });
-            }
-    </script>
     <script src="script.js"></script>
 </html>
